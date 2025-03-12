@@ -1,22 +1,44 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import "@mui/material";
+import * as React from "react";
+import { useNavigate } from "react-router-dom";
+import TextField from "@mui/material/TextField";
+import Button from "@mui/material/Button";
 
 function App() {
+  const navigate = useNavigate();
+
   return (
     <div className="App">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+        <TextField
+          id="outlined-basic"
+          label="Nombre de usuario"
+          variant="outlined"
+          sx={{
+            input: {
+              color: "black",
+              background: "white",
+            },
+          }}
+          style={{ marginBottom: 10 }}
+        />
+        <TextField
+          id="outlined-basic"
+          type="password"
+          label="Contraseña"
+          variant="outlined"
+          sx={{
+            input: {
+              color: "black",
+              background: "white",
+            },
+          }}
+          style={{ marginBottom: 10 }}
+        />
+        <Button className="primary" onClick={() => navigate("/tasks")}>
+          Iniciar sesión
+        </Button>
       </header>
     </div>
   );
